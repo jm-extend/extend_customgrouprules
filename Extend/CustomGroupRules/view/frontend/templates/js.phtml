@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var Js $block
+ */
+
+use Extend\CustomGroupRules\Block\Js;
+use Extend\CustomGroupRules\ViewModel\CustomGroupRules;
+
+/** @var CustomGroupRules $viewModel */
+$viewModel = $block->getData('viewModel');
+?>
+<script>
+    window.valuesConfigCustomerGroupRulesEnabled = '<?php echo $viewModel->isCustomGroupRulesEnabled(); ?>';
+    window.valuesConfigCustomGroupRulesCustomerGroups = '<?php echo json_encode($viewModel->getCustomGroupRulesCustomerGroups()); ?>';
+    window.valuesConfigCustomGroupRulesCustomerGroupId = '<?php echo $viewModel->getCustomerGroupId();?>';
+</script>
